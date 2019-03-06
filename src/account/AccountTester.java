@@ -4,10 +4,10 @@
  * and open the template in the editor.
  */
 package account;
-
+import java.util.Scanner;
 /**
  *
- * @author sheetal
+ * @author Sivagama
  */
 public class AccountTester {
     
@@ -16,14 +16,19 @@ public class AccountTester {
         for the given bank*/
         Account ac[]=new Account[500];
         
-        Account a=new Account(100);
+        System.out.println("Please enter the amount by which you want to open an account:");
+        
+        Scanner sc=new Scanner(System.in);
+        double bal=sc.nextDouble();
+        
+        System.out.println("Please enter the unique user name:");
+        sc.nextLine();
+        String user=sc.nextLine();
+        
+        Account a=new Account(bal,user);
         ac[0]=a;
-        
-        System.out.println("The balance is:"+a.getBalance());
-        
-        System.out.println("The InterestRate per month is"+a.getInterestRate());
-        
-        /*create the method to know the balance after applying 
-         interest rate per month*/
+             
+        System.out.println("The balance is: "+a.getBalance());  
+        System.out.println("The InterestRate per month is "+a.getInterestRate());
     }
 }

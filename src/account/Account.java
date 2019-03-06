@@ -7,21 +7,23 @@ package account;
 
 /**
  *
- * @author sheetal
+ * @author Sivagama
  */
 public class Account {
 
     
         private double balance;
         private double interestRate=0.23;
+        private String user;
  
      /**constructor that takes the initial balance
       * @param initialBalance 
       */
-        public Account(double initialBalance)
+        public Account(double initialBalance,String givenUser)
         {
-               if (initialBalance > 0.0) 
-                   balance=initialBalance;
+            balance=initialBalance;
+            user=givenUser;
+            //Note that the initial balance must be greater than 50.       
         }
 
      /**The method for depositing amount and 
@@ -54,6 +56,13 @@ public class Account {
         {
             return interestRate;
         }
+
+    /**user is the read only field
+     * @return the user
+     */
+    public String getUser() {
+        return user;
+    }
     
     
 }//class end
