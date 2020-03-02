@@ -21,11 +21,38 @@ public class Account {
       */
         public Account(double initialBalance,String givenUser)
         {
-            balance=initialBalance;
-            user=givenUser;
+            if (validBalance(initialBalance)){
+                balance=initialBalance;
+                user=givenUser;
+                System.out.println("Account created");}
+            else
+                System.out.println("Account not created");
+            
+            
+            
             //Note that the initial balance must be greater than 50.       
         }
-
+        /**
+         * 
+         * @param initialBalance
+         * @return true if higher than 50 
+         */
+        public static boolean validBalance(double initialBalance){
+            if (initialBalance > 50){
+                
+                return true;
+            }
+            else
+                return false;
+        }
+        /**
+         * 
+         * @param time
+         * @return double value that equals amount*interest rate*time 
+         */
+        public double calcBalanceFinal(int time){
+            return balance + (balance*interestRate*time);
+        }
      /**The method for depositing amount and 
       * updating balance*/
         public void credit(double amount)

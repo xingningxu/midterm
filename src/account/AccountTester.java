@@ -30,5 +30,8 @@ public class AccountTester {
              
         System.out.println("The balance is: "+a.getBalance());  
         System.out.println("The InterestRate per month is "+a.getInterestRate());
+        System.out.println("enter how many month you will have the money in bank");
+        int time = sc.nextInt();
+        System.out.println("your final balance is:" + ac[0].calcBalanceFinal(time));
     }
 }
