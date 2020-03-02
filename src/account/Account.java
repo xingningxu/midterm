@@ -48,7 +48,7 @@ public class Account {
         /**
          * 
          * @param time
-         * @return double value that equals amount*interest rate*time 
+         * @return double value that equals amount*interest rate*time + amount
          */
         public double calcBalanceFinal(int time){
             return balance + (balance*interestRate*time);
